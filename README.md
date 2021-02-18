@@ -1,7 +1,7 @@
 # Laborator1PA
 
 
-1.In folder cu exercitiul Loborator1PA1 se afla prima problema
+1.In folder cu exercitiul Loborator1PA1 se afla prima problema obligatorie
 
 
 
