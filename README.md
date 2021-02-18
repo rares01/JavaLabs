@@ -1,7 +1,10 @@
 # Laborator1PA
 
 
-1.In folder cu exercitiul Loborator1PA1 se afla prima problema 
+1.In folder cu exercitiul Loborator1PA1 se afla prima problema
+
+
+
 2.In folderul Laborator1PAOptionla se afla a doua problema cea optionala.
 -pentru a verifica daca este numar folosesc un try catch
 -creez matricea cu elemente random
