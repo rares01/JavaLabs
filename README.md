@@ -13,6 +13,8 @@
 -creez o noua matrice pentru arborele partial folosind muchiile din graful conex
 -afisez matricea 
 -folosesc functiile pentru nanosecunde 
+
+
 3.In folderul Laborator1PABonus se afla a treia problema cea pentru bonus.
 -inca nu este functionala
 
