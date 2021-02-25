@@ -2,7 +2,7 @@ package com.company;
 
 import java.util.Random;
 
-public class Main {
+public class MainBonus {
 
     public static void main(String[] args) {
         // write your code here
@@ -52,4 +52,3 @@ public class Main {
 
     }
 }
-// fac o functie recursiva  ( cauta strcat din java maine dim), apeleaza recurisv tree pentru fiecare nod parinte, nu uita sa scazi n-ul
