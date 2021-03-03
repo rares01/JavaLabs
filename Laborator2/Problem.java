@@ -1,18 +1,39 @@
 package com.company;
 
 import java.sql.Array;
+import java.util.ArrayList;
 import java.util.Arrays;
-
+/**In constructor avem 2 liste: una de destinatii si una de source. Si verificam daca avem o sursa sau o destinatie de 2 ori.*/
 public class Problem {
-public Source [] sources;
-public Destination[] destinations;
+public ArrayList<Source>  sources;
+public ArrayList<Destination> destinations;
 private int matrix [][];
 private int[] demand;
 private int[] supply;
 
 
-    public Problem(Source[] sources, Destination[] destinations, int[][] matrix, int[] demand, int[] supply) {
-        if((sources.length==supply.length) && (destinations.length==demand.length) &&  (matrix.length* matrix.length== demand.length* supply.length))
+    public Problem(ArrayList<Source> sources, ArrayList<Destination> destinations, int[][] matrix, int[] demand, int[] supply) {
+        int oksource=1;
+        int okdestin=1;
+        for(int i=0;i<sources.size()-1;i++)
+            for(int j=i+1;j<sources.size();j++)
+                if(sources.get(i).equals(sources.get(j)))
+                {
+                    System.out.println("Exita minim 2 surse la fel!");
+                    oksource=0;
+                }
+        for(int i=0;i<destinations.size()-1;i++)
+            for(int j=i+1;j<destinations.size();j++)
+                if(destinations.get(i).equals(destinations.get(j)))
+                {
+                    System.out.println("Exita minim 2 destinatii la fel!");
+                   okdestin=0;
+                }
+        if(okdestin == 0 || oksource==0)
+        {
+            System.exit(-1);
+        }
+        if((sources.size()==supply.length) && (destinations.size()==demand.length) &&  (matrix.length* matrix.length== demand.length* supply.length))
         {
             this.sources = sources;
             this.destinations = destinations;
@@ -26,19 +47,11 @@ private int[] supply;
         }
     }
 
-    public Source[] getSources() {
-        return sources;
-    }
-
-    public void setSources(Source[] sources) {
+    public void setSources(ArrayList<Source> sources) {
         this.sources = sources;
     }
 
-    public Destination[] getDestinations() {
-        return destinations;
-    }
-
-    public void setDestinations(Destination[] destinations) {
+    public void setDestinations(ArrayList<Destination> destinations) {
         this.destinations = destinations;
     }
 
@@ -82,9 +95,10 @@ private int[] supply;
     @Override
     public String toString() {
         return
-                "sources=" + Arrays.toString(sources) + '\n' +
-                "destinations=" + Arrays.toString(destinations)  + "\nCost matrix" + printMat(matrix) +
+                "sources=" + sources + '\n' +
+                "destinations=" + destinations  + "\nCost matrix" + printMat(matrix) +
                  "\ndemand=" + Arrays.toString(demand)  +
                 "\nsupply=" + Arrays.toString(supply) ;
     }
+
 }

@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Objects;
+
 public class Destination {
    private String names;
 
@@ -20,5 +22,11 @@ public class Destination {
         this.names = names;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null || (obj instanceof Destination)) return false;
+        Destination other = (Destination) obj;
+        return names.equals(other.names);
+    }
 
 }

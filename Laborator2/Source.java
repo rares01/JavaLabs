@@ -1,8 +1,10 @@
 package com.company;
 
-public class Source {
-    private String names;
-    public SourceType type;
+import java.util.Objects;
+
+public abstract class Source {
+    protected String names;
+    protected String type;
 
     @Override
     public String toString() {
@@ -11,7 +13,7 @@ public class Source {
                 '}';
     }
 
-    public Source(String names, SourceType type) {
+    public Source(String names, String type) {
         this.names = names;
         this.type = type;
     }
@@ -20,18 +22,26 @@ public class Source {
         this.names = names;
     }
 
-    public void setType(SourceType type) {
-        this.type = type;
-    }
 
 
     public String getNames() {
         return names;
     }
 
-    public SourceType getType() {
+    public String getType() {
         return type;
     }
 
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null || !(obj instanceof Source)) return false;
+
+        Source other = (Source) obj;
+        return names.equals(other.names) && type == other.type;
+    }
 
 }
