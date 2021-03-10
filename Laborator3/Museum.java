@@ -10,12 +10,16 @@ private String name;
 private int ticketPrice;
 private LocalTime openingTime,closingTime;
 
+    public Museum() {
+        this.opening();
+        this.closing();
+    }
 
-
+    @Override
     public void setOpeningTime(LocalTime openingTime) {
         this.openingTime = openingTime;
     }
-
+    @Override
     public void setClosingTime(LocalTime closingTime) {
         this.closingTime = closingTime;
     }

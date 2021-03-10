@@ -35,6 +35,9 @@ public abstract class Location implements Comparable<Location>{
     public int compareTo(Location other) {
         return this.name.compareTo(other.name);
     }
+
+
+
     public String printMap(Map<Location, Integer> cost)
     {
         String finalMap="";
