@@ -36,5 +36,11 @@ public class School implements Comparable<School>{
       else return this.name.compareTo(other.name);
     }
 
-
+    @Override
+    public String toString() {
+        return "School{" +
+                "name='" + name + '\'' +
+                ", capacity=" + capacity +
+                '}';
+    }
 }
