@@ -37,9 +37,7 @@ public class MainFrame extends JFrame {
         canvas.reset();
     }
 
-    public void loadImg(BufferedImage image){
-        canvas.loadImage(image);
-    }
+
 
 
 }
