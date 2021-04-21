@@ -94,7 +94,9 @@ public class ClassGenresDao implements genresDao{
                 // each line of
                 // the file, using a comma as the delimiter
                 String[] attributes = line.split(",");
-                int id= Integer.parseInt(attributes[0]);
+                String copie = attributes[0];
+                 String numele= copie.substring(2);
+                 int id= Integer.parseInt(numele);
                 String name = attributes[5];
                 Genres gen = new Genres(id,name);
                 // adding Genres into ArrayList
