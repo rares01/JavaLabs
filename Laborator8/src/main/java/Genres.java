@@ -1,9 +1,12 @@
-import java.sql.*;
 
-public class Genres implements Dao{
+
+public class Genres {
 
     private int id;
     private String name;
+
+    public Genres() {
+    }
 
     public Genres(int id, String name) {
         this.id = id;
@@ -26,26 +29,5 @@ public class Genres implements Dao{
         this.name = name;
     }
 
-    @Override
-    public void create() throws SQLException {
-        Connection con= Singleton.getCon();
-        PreparedStatement pstmt = con.prepareStatement("insert into genres(id,name) VALUES(?,?)");
-        pstmt.setString(1,String.valueOf(getId()));
 
-        pstmt.setString(2,getName());
-        pstmt.executeUpdate();
-        con.commit();
-    }
-
-    @Override
-    public void select() throws SQLException {
-        Connection con= Singleton.getCon();
-        Statement stmt=con.createStatement();
-        ResultSet rs = stmt.executeQuery("select * from genres");
-        while (rs.next()) {
-            int id= rs.getInt("id");
-            String name=rs.getString("name");
-            System.out.println(id + ", " + name);
-        }
-    }
 }

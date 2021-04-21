@@ -23,3 +23,17 @@ CREATE TABLE  asstab
     FOREIGN KEY (movieId) REFERENCES movies(id)
 );
 
+CREATE  TABLE actors(
+    movieId int not null,
+    name varchar2(255) not null,
+     FOREIGN KEY (movieId) REFERENCES movies(id)
+);
+
+CREATE  TABLE directors(
+    movieId int not null,
+    name varchar2(255) not null,
+    FOREIGN KEY (movieId) REFERENCES movies(id)
+);
+
+
+
