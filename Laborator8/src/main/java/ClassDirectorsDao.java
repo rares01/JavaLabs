@@ -92,7 +92,9 @@ public class ClassDirectorsDao implements directorsDao{
                 // each line of
                 // the file, using a comma as the delimiter
                 String[] attributes = line.split(",");
-                int id= Integer.parseInt(attributes[0]);
+                String copie = attributes[0];
+                 String numele= copie.substring(2);
+                 int id= Integer.parseInt(numele);
                 String name = attributes[9];
                 Directors dir = new Directors(id,name);
                 // adding Direcotr into ArrayList
