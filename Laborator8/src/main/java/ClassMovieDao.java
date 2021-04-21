@@ -111,7 +111,9 @@ public class ClassMovieDao implements movieDao{
                  // each line of
                  // the file, using a comma as the delimiter
                  String[] attributes = line.split(",");
-                 int id= Integer.parseInt(attributes[0]);
+                 String copie = attributes[0];
+                 String numele= copie.substring(2,8);
+                 int id= Integer.parseInt(numele);
                  String title = attributes[1];
                  String release_date= attributes[4];
                  int duration= Integer.parseInt(attributes[6]);
